@@ -1,0 +1,33 @@
+https://tobiasahlin.com/moving-letters/#5
+
+https://codepen.io/gschier/pen/jkivt
+
+Hover.css
+
+https://stackoverflow.com/questions/13272824/combine-two-or-queries-with-and-in-mongoose
+
+https://github.com/karanwadhwa03/BootstrapTable
+
+https://docs.mongodb.com/manual/reference/operator/query/gte/
+
+//Flash Pr agr ik function Chl jata h To Disappear Ho jata h 
+
+https://codepen.io/KillerJK/pen/braqMJ
+
+https://stackoverflow.com/questions/36096805/uploading-multiple-files-with-multer-but-from-different-fields
+
+https://stackoverflow.com/questions/61913172/uploading-multiple-files-through-form-from-different-fields-and-storing-into-mon
+
+https://www.youtube.com/watch?v=crWdh53CYnw
+
+https://www.youtube.com/watch?v=NB71vyCj2X4
+
+https://www.youtube.com/watch?v=9zEhGUIUwxY&list=PLurIMwd6GdCiv8ZhpqcwqpFM5Ez4JGago&index=2
+
+//404 vala page codepen se lia tha 
+
+https://stackoverflow.com/questions/19654577/html-embedded-pdf-iframe
+
+https://codepen.io/dhruvaldesai/pen/WNxoJBd
+
+https://www.youtube.com/watch?v=2U2JCaawzww

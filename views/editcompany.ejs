@@ -1,0 +1,111 @@
+<%- include('./layout/header') %>
+<%- include('./layout/adminnavbar') %>
+<br>
+
+<div class="row justify-content-around " >
+
+    <div class="col-md-6 shadow border-top p-2">
+        <h1 class="text-center">EDIT EVENT</h1>
+<form method="POST" action="/admin/editplacement" enctype="multipart/form-data">
+  <input type="hidden" value="<%=csrfToken%>" name="_csrf">
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Company Name</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Company Name" value="<%=company.name%>" name="companyname">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword2">Position</label>
+        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Position" name="position" value="<%=company.position%>">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword3">Package</label>
+        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Package" name="packageoffered" value="<%=company.package%>">
+    </div>
+    <!-- BRANCHES -->
+    Branches:
+    <div class="text-center"> 
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="CS" name="branches"  >
+        <label class="form-check-label" for="inlineCheckbox1"  >CS</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="IT" name="branches">
+        <label class="form-check-label" for="inlineCheckbox2">IT</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Mech" name="branches">
+        <label class="form-check-label" for="inlineCheckbox3">Mech</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="EL" name="branches">
+        <label class="form-check-label" for="inlineCheckbox4">EL</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="ECE" name="branches">
+        <label class="form-check-label" for="inlineCheckbox5">ECE</label>
+      </div>
+
+    </div> 
+      <br>
+      
+      <div class="form-row mt-3">
+        <div class="col-md-3 mb-3">
+          <label for="validationDefault03">CGPA</label>
+          <input type="text" class="form-control" id="validationDefault03" placeholder="Cgpa Required" name="cgpa"  value="<%=company.cgpa%>" >
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="validationDefault003">Backlogs</label>
+            <input type="text" class="form-control" id="validationDefault003" placeholder="Backlogs" name="backlogs" value="<%=company.backlogs%>">
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationDefault04">10%</label>
+          <input type="text" class="form-control" id="validationDefault04" placeholder="10 %" name="tenthpercentage" value="<%=company.tenthpercentage%>">
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationDefault05">12%</label>
+          <input type="text" class="form-control" id="validationDefault05" placeholder="12 %" name="twelvepercentage" value="<%=company.twelvepercentage%>">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="exampleInputPassword20">Additional File</label>
+        <input type="file" class="form-control" id="exampleInputPassword20" placeholder="Add File" name="pdf">
+    </div>
+    <div class="form-row mt-3">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault030">Link</label>
+        <input type="text" class="form-control" id="validationDefault030" placeholder="Link Or Google Form" name="link" value="<%=company.link%>">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault0300">Last Date</label>
+        <input type="date" class="form-control" id="validationDefault0300" placeholder="Date" name="date" value="<%=company.date%>">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault0400">Type</label>
+        <select id="inputState" class="form-control" name="type"  placeholder="Gender" id="validationDefault0400">
+          <option selected>FTE + Intern</option>
+          <option>Full Time</option>
+          <option>Intern</option>
+
+        </select>
+
+      </div>
+      <input type="hidden" value="<%=company._id%>" name="id">
+      </div>
+      
+
+
+
+    <button class="btn btn-primary">Update </button>
+
+
+    
+
+
+
+</form>
+</div>
+
+</div>
+
+<%- include('./layout/footer') %>

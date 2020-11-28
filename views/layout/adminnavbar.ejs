@@ -1,0 +1,104 @@
+<div id="hideinwhite"></div>
+<div id="whiteindark"></div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light  shadow" id="navbar">
+
+    <!-- Image and text -->
+    <div id="button">
+
+    </div>
+    <nav class="navbar navbar-light " id="navbar">
+    <a class="navbar-brand" href="/">
+      <img src="/images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Opportunity Geeks
+    </a>
+    </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        
+        <!-- <ul class="navbar-nav  ml-auto">
+            
+              <li class="nav-item ">
+                <a class="nav-link hvr-grow-shadow active hvr-underline-reveal"  data-toggle="modal" data-target="#exampleModal1">Profile <i class="fa fa-sign-in"></i>
+                </a>
+              </li>
+
+        </ul> -->
+        
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item  mr-3">
+            <a class="nav-link hvr-underline-reveal hvr-grow-shadow active " data-toggle="modal" data-target="#exampleModal" ><%=session.name%> <i class="fa fa-user" aria-hidden="true"></i></a>
+        </li>
+        
+        <li class="nav-item active" id="dark-mode-toggle">
+          <a class="nav-link"      ><i class="fa fa-moon-o"></i>  Change Mode</a>
+        </li>
+        <li class="nav-item active" id="dark-mode-toggle">
+          <form action="/user/logout" method="POST">
+            <input type="hidden" value="<%=csrfToken%>" name="_csrf">
+
+            <button class="btn btn-danger">Logout</button>
+            </form>
+
+        </li>
+       
+        
+      </ul>
+
+        <!-- MODAL -->
+        <!-- <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">SignIn <i class="fa fa-user" aria-hidden="true"></i> </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div> -->
+                <!-- <div class="modal-body">
+                    <form action="/signin" method="POST" >
+                        <input type="text" placeholder="Enter Full Name" name="name" class="form-control"><br>
+                        <input type="text" placeholder="Email Address" name="email" class="form-control"><br>
+                        <input type="text" placeholder="Roll No." name="rollno" class="form-control"><br>
+                        <select id="inputState" class="form-control" name="gender"  placeholder="Gender">
+                            <option selected>Male</option>
+                            <option>Female</option>
+                          </select><br>
+                        <select id="inputState" class="form-control" name="gender"  placeholder="Gender">
+                            <option selected>CS</option>
+                            <option>IT</option>
+                            <option>ECE</option>
+                            <option>MECH.</option>
+                            <option>El</option>
+                            <option>Eic</option>
+                          </select><br>
+                        <input type="text" placeholder="10 %" name="10percent" class="form-control"><br>
+                        <input type="text" placeholder="12 %" name="12percent" class="form-control"><br>
+                        <input type="text" placeholder="Current Degree %" name="degreepercent" class="form-control"><br>
+                        <input type="text" placeholder="Current Backlog" name="backlog" class="form-control"><br>
+
+                        <input type="text" placeholder="Contact No" name="contact" class="form-control"><br>
+
+                                                
+                        <button class="btn btn-primary">Update</button>
+                         
+    
+     -->
+                    </form>
+    
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        <!-- MODAL -->
+
+
+
+    </div>
+  </nav>

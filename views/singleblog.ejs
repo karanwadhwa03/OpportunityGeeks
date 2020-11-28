@@ -1,0 +1,123 @@
+<%-include('./layout/header')%>
+<%-include('./layout/usernavbar')%>
+<br>
+<br>
+
+<div class="container">
+    <div class="col-md-3">
+        <p  class="btn btn-primary btn-block" data-toggle="modal" data-target="#addPostModal">
+          <i class="fas fa-plus"></i> Add Views
+        </p>
+      </div>
+</div>
+
+
+<div class="container p-3 rounded" style="border:2px solid blue ; border-radius: 2px; ">
+   
+
+    <h2><strong><%=blog.title%></strong></h2>
+
+    <div >
+       
+    <%-blog.body%>
+      
+        
+          
+    </div>
+
+    
+
+
+    <div class="d-flex ">
+        <p>Created By :: </p>
+        <a href="/<%=blog.createdBy.image%>" data-toggle="lightbox">
+            <img src="/<%=blog.createdBy.image%>"  style="width: 30px ; height: 30px; border-radius: 50%;">
+            
+        </a>
+        <p> &nbsp <%=blog.createdBy.name%> </p>
+       
+    </div>
+
+    <small>people views or comments down there</small>
+    <hr>
+    <% if(blog.comments.length>0){ %>
+    <% blog.comments.forEach(comment=>{ %>
+      
+    <hr>
+   <%  if(comment.userid._id.toString() == session._id.toString()){  %>
+
+    
+    <form action="/user/commentdelete" method="POST" class="float-right">
+      <input type="hidden" value="<%=comment._id%>" name="commentid" class="d-inline">
+      <input type="hidden" value="<%=blog._id%>" name="blogid" class="d-inline">
+
+      <button class="btn btn-link ">delete</button>
+      
+
+      </form>
+      
+      <%} %>
+      <div class="row d-flex px-3">
+        <div class="">
+          <a href="/<%=comment.userid.image%>" data-toggle="lightbox">
+            <img src="/<%=comment.userid.image%>"  style="width: 30px ; height: 30px; border-radius: 50%;">   
+        </a>
+
+        </div>
+        <div class="">
+          <p> &nbsp; <%=comment.userid.name%></p>
+          
+          <p mr-3><%=comment.text%></span></p>
+        </div>
+      </div>
+      
+      
+      <%})%>
+    <%}%>
+
+</div>
+
+
+
+
+
+<div class="modal fade" id="addPostModal" style="color: black;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Add Views</h5>
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        
+
+        <div class="modal-body">
+            <form action="/user/post/comment" method="POST">
+                
+                  <div class="form-group">
+                    <label for="body">Body</label>
+                    <textarea  class="form-control" name="comment" placeholder="comment Goes Here"></textarea>
+                    <input type="hidden" name="blogid" value="<%=blog._id%>">
+                    <input type="hidden" name="userid" value="<%=session._id%>">
+                  </div>
+                  <button class="btn btn-primary" >POST</button>
+                </form>
+
+           
+        
+        </div>
+       
+        
+      </div>
+    </div>
+  </div>
+
+
+<script>
+   //fetch('')
+
+</script>
+
+<%-include('./layout/footer')%>
+

@@ -1,0 +1,102 @@
+<%-include('./layout/header')%>
+
+
+<%-include('./layout/usernavbar')%>
+<br><br>
+
+<div class="row container justify-content-center " style="margin-left: auto; margin-right: auto;">
+<div class="col-md-5  p-3">
+
+<a href="/<%=user.image%>" data-toggle="lightbox">
+
+<img src="/<%=user.image%>" alt="Please Upload Photo" style="width: 400px; height:400px;" >
+
+</a>
+<div class="text-center mt-2">
+<button class="btn btn-secondary text-white"><a href="/<%=user.resume%>" download >RESUME</a></button>
+</div>
+</div>
+
+<div class="col-md-7  p-3">
+    <table class="table">
+        <tbody>
+          <tr>
+            <th id="whiteindark">Name</th>
+            <td id="whiteindark"><%=user.name%></td>
+            
+          </tr>
+          <tr>
+            <th id="whiteindark">Roll No.</th>
+            <td id="whiteindark"><%=user.rollno%></td>
+            
+          </tr>
+          <tr>
+            <th id="whiteindark">Email</th>
+            <td id="whiteindark"><%=user.email%></td>
+            
+          </tr>
+          <tr>
+            <th id="whiteindark">Gender</th>
+            <td id="whiteindark"><%=user.gender%></td>
+            
+          </tr>
+          <tr>
+            <th id="whiteindark">Branch</th>
+            <td id="whiteindark"><%=user.branch%></td>
+          </tr>
+
+          <tr>
+            <th id="whiteindark">10 %</th>
+            <td id="whiteindark"><%=user.tenthpercentage%></td>
+          </tr>
+
+          <tr>
+            <th id="whiteindark">12 %</th>
+            <td id="whiteindark"><%=user.twelevepercentage%></td>
+          </tr>
+
+          <tr>
+            <th id="whiteindark">Backlog</th>
+            <td id="whiteindark"><%=user.backlog%></td>
+          </tr>
+
+          <tr>
+            <th id="whiteindark">Cgpa</th>
+            <td id="whiteindark"><%=user.cgpa%></td>
+          </tr>
+
+          <tr>
+            <th id="whiteindark">Conatct</th>
+            <td id="whiteindark"><%=user.contact%></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+</div>
+
+</div>
+<!-- <iframe id="fred" style="border:1px solid #666CCC" title="PDF in an i-Frame" src="/<%=user.resume%>" frameborder="1" scrolling="auto" height="1100" width="850" ></iframe> -->
+ <% if(user.resume){ %>
+
+  
+<div class="container border shadow-lg">
+<object data="/<%=user.resume%>" type="application/pdf" style="height: 750px; width: 100%; margin: auto;">
+  <embed src="/<%=user.resume%>" type="application/pdf" />
+</object>
+</div>
+<% } %>
+<br>
+<br>
+
+
+<%-include('./layout/footer')%>
+<style>
+a{
+    color: white;
+}
+a:hover{
+    color: white;
+    text-decoration: none;
+}
+</style>

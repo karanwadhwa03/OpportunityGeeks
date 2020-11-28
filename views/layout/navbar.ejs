@@ -1,0 +1,111 @@
+<div id="blackinwhite"></div>
+
+<div id="hideinwhite"></div>
+<div id="whiteindark"></div>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light  shadow   " id="navbar" >
+
+    <!-- Image and text -->
+    <nav class="navbar navbar-light " >
+    <a class="navbar-brand" href="/">
+      <img src="/images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Opportunity Geeks
+    </a>
+    </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav  ml-auto">
+            
+                <li class="nav-item  mr-3">
+                    <a class="nav-link hvr-underline-reveal hvr-grow-shadow active " data-toggle="modal" data-target="#exampleModal" >SignIn <i class="fa fa-user" aria-hidden="true"></i></a>
+                </li>
+            
+            
+           
+              
+              <li class="nav-item ">
+                <a class="nav-link hvr-grow-shadow active hvr-underline-reveal"  data-toggle="modal" data-target="#exampleModal1">SignUp <i class="fa fa-sign-in"></i>
+                </a>
+              </li>
+
+        </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active" id="dark-mode-toggle">
+          <a class="nav-link"    ><i class="fa fa-moon-o"></i>  Change Mode</a>
+        </li>
+       
+        
+      </ul>
+
+
+      <!-- MODAL -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" style="color: black;">SignIn <i class="fa fa-user" aria-hidden="true"></i> </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="color: black;">
+                <form action="/user/signin" method="POST" >
+                  <input type="hidden" value="<%=csrfToken%>" name="_csrf">
+
+                    <input type="email" placeholder="Email Address" name="email" class="form-control" required><br>
+                    <input type="password" placeholder="Password" name="password" class="form-control" required><br>
+                    
+                    <button class="btn btn-primary">Login</button>
+                    <div class="text-center">
+                      <a href="/user/forgotpassword">Forgot Password??</a>
+                    </div>
+
+
+                </form>
+
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" style="color: black;">SignUp <i class="fa fa-sign-in"></i> </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="color:black">
+                <form action="/user/signup" method="POST"  >
+                  <input type="hidden" value="<%=csrfToken%>" name="_csrf">
+
+                    <input type="text" placeholder="Name" name="name" class="form-control" required><br>
+                    <input type="email" placeholder="Email Address" name="email" class="form-control" required ><br>
+                    <input type="password" placeholder="Password" name="password" class="form-control" id="password" required ><br>
+                    <input type="password" placeholder="Confirm Password" name="confirmpassword" id="confirmpassword" class="form-control" required><br>
+                    <button class="btn btn-primary">SignUp</button>
+                     
+
+
+                </form>
+
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    <!-- MODAL -->
+
+    </div>
+  </nav>

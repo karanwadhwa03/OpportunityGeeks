@@ -1,0 +1,155 @@
+
+<div id="hideinwhite"></div>
+<div id="whiteindark"></div>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light  shadow   " id="navbar">
+
+
+  <div id="button">
+
+  </div>
+
+    <!-- Image and text -->
+    <nav class="navbar navbar-light ">
+    <a class="navbar-brand" href="/">
+      <img src="/images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Opportunity Geeks
+    </a>
+    </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        
+        <ul class="navbar-nav  ml-auto">
+            <% if(session.level=='user' ){%>
+
+            
+              <li class="nav-item ">
+                <a class="nav-link hvr-grow-shadow active hvr-underline-reveal"  data-toggle="modal" data-target="#exampleModal1">Profile <i class="fa fa-sign-in"></i>
+                </a>
+              </li>
+              <%}%>
+        </ul>
+        
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item  mr-3">
+  <div class="dropdown">
+  <button class="btn  " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link hvr-underline-reveal hvr-grow-shadow active " data-toggle="modal" data-target="#exampleModal" ><%=session.name%> <i class="fa fa-user" aria-hidden="true"></i></a>
+
+  </button>
+  <% if(session.level=='user'){%>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/user/myprofile">My Profile</a>
+    <a class="dropdown-item" href="/user/changepassword">Change Password</a>
+    
+  </div>
+  <%}%>
+</div>
+
+
+
+        </li>
+        
+        <li class="nav-item active  ">
+          <button class="btn">
+          <a class="nav-link active"     id="dark-mode-toggle"" ><i class="fa fa-moon-o"></i>  Change Mode</a>
+        </button>
+        </li>
+      
+        <li class="nav-item active" >
+          <form action="/user/logout" method="POST">
+            <input type="hidden" value="<%=csrfToken%>" name="_csrf">
+
+            <button class="btn btn-danger mt-lg-1"> <a >Logout </a></button>
+            </form>
+
+        </li>
+        
+      </ul>
+
+        <!-- MODAL -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" style="color: black;" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel" >Profile <i class="fa fa-user" aria-hidden="true"></i> </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/user/profile" method="POST" enctype="multipart/form-data" >
+                      <input type="hidden" value="<%=csrfToken%>" name="_csrf">
+
+                        <label for="name">Name</label>
+                         <input type="text" placeholder="Enter Full Name" id="name" name="name" class="form-control" value="<%=session.name%>"><br>
+                     
+                        <label for="email">Email Address</label>
+                        <input type="email"  id="email" placeholder="Email Address" name="email" class="form-control" value="<%=session.email%>"><br>
+                        
+                        <label for="rollno">Roll No.</label>
+                        <input type="text" placeholder="Roll No." id="rollno" name="rollno" class="form-control" value="<%=session.rollno%>"><br>
+                        
+                        <label for="Gender">Gender</label>
+                        <select id="inputState" class="form-control" id="Gender" name="gender"  placeholder="Gender" value="<%=session.gender%>" >
+                            <option <%=session.gender =='Male' ? 'selected':''%>  >Male</option>
+                            <option <%=session.gender =='Female' ? 'selected':''%>>Female</option>
+                          </select><br>
+
+                        <label for="branch">Branch</label>
+                        <select id="inputState" class="form-control" id="branch" name="branch"  placeholder="Gender"  >
+                            <option <%=session.branch =='CS' ? 'selected':''%>>CS</option>
+                            <option <%=session.branch =='IT' ? 'selected':''%>>IT</option>
+                            <option <%=session.branch =='ECE' ? 'selected':''%>>ECE</option>
+                            <option <%=session.branch =='MECH' ? 'selected':''%>>MECH.</option>
+                            <option <%=session.branch =='EL' ? 'selected':''%>>El</option>
+                            <option <%=session.branch =='Eic' ? 'selected':''%>>Eic</option>
+                          </select><br>
+                        <label for="10%">10 %</label>
+                        <input type="text" placeholder="10 %" id="10 %" name="tenpercent" class="form-control" value="<%=session.tenthpercentage%>"><br>
+                        
+                        <label for="12%">12 %</label>
+                        <input type="text" placeholder="12 %" id="10%" name="twelvepercent" class="form-control " value="<%=session.twelvepercentage%>"><br>
+                        
+                        <label for="cgpa">CGPA</label>
+                        <input type="text" placeholder="CGPA" id="cgpa" name="degreepercent" class="form-control" value="<%=session.cgpa%>"><br>
+                        
+                        <label for="backlog">Backlog</label>
+                        <input type="text" placeholder="Current Backlog" id="backlog" name="backlog" class="form-control" value="<%=session.backlog%>"><br>
+
+                        <label for="contact">Contact</label>
+                        <input type="text" placeholder="Contact No" id="contact" name="contact" class="form-control" value="<%=session.contact%>"><br>
+                        
+                        <label for="photo">Photo</label>
+                        <input type="file" id="photo" name="image" class="form-control" ><br>
+
+                        <label for="resume">Resume</label>
+                        <input type="file" id="resume" name="resume" class="form-control" ><br>
+
+
+                        <input type="hidden" name="id" value="<%=session._id%>">
+                                                
+                        <button class="btn btn-primary">Update</button>
+                         
+    
+    
+                    </form>
+    
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        <!-- MODAL -->
+
+
+
+    </div>
+  </nav>

@@ -1,0 +1,66 @@
+<%- include('./layout/header') %>
+<%- include('./layout/usernavbar') %>
+
+<!-- <h1 class="text-center"><%=company.name%></h1> -->
+<h1 class="bg-textt text-center "><%=company.name%></h1>
+<br>
+<table class="container text-center table">
+    <tr id="whiteindark">
+      <th>Name:</th>
+      <td><%=company.name%></td>
+    </tr>
+    <tr id="whiteindark">
+      <th>Postion</th>
+      <td><%=company.position%></td>
+    </tr>
+    <tr id="whiteindark">
+      <th>Package</th>
+      <td><%=company.package%></td>
+    </tr>
+    <tr id="whiteindark">
+        <th>Type</th>
+        <td><%=company.type%></td>
+    </tr>
+    <tr id="whiteindark">
+        <th>Branches</th>
+        <td><%=company.branches%></td>
+    </tr>
+    <tr id="whiteindark">
+        <th>Cgpa Required</th>
+        <td><%=company.cgpa%></td>
+    </tr>
+    <tr id="whiteindark">
+        <th>10% Required</th>
+        <td><%=company.tenthpercentage%></td>
+    </tr>
+    <tr id="whiteindark">
+        <th>12% Required</th>
+        <td><%=company.twelvepercentage%></td>
+    </tr>
+    <tr id="whiteindark">
+        <th>Backlogs Allowed</th>
+        <td><%=company.backlogs%></td>
+    </tr>
+    <tr id="whiteindark">
+        <th>Apply</th>
+        <td><a href="<%=company.link%>">Click To Apply</td>
+    </tr>
+    <% if(company.additional!=""){%>
+        <tr>
+            <th id="whiteindark">JD</th>
+            <td id="whiteindark"><a href="/<%=company.additional%>"  >Download</td>
+        </tr>
+        <%}%>
+
+  </table>
+
+
+
+<%- include('./layout/footer') %>
+
+<style>
+    /* table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+} */
+</style>

@@ -1,0 +1,73 @@
+.bg-color{
+  background-color: #79adb9
+}
+.bg-color-2{
+  background-color: red;
+
+}
+
+
+.dark-mode {
+    background-color: rgb(8, 8, 48);
+    color: white;
+    
+  }
+  li:hover{
+    cursor: pointer;
+  }
+
+  .radius{
+    border-radius: 25%;
+  }
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+  
+  li{
+    list-style: none;
+  }
+
+body{
+  overflow-x: hidden;
+}
+
+.bg-bold{
+  position: relative;
+  top:-100px;
+  font-size: 84px;
+  font-weight: 700;
+  color: rgb(0, 0, 0,.15);
+
+}
+.bg-text{
+  font-weight: 700;
+  font-size: 84px;
+  position: relative;
+  top:40px;
+  color: rgb(0, 0, 0,.15);
+
+}
+
+.bg-textt{
+  font-weight: 700;
+  font-size: 84px;
+  color: rgb(0, 0, 0,.15);
+}
+
+
+.darkmode {
+  --clr-light: #fdffc4;
+  --clr-dark: #00332a;
+  --clr-primary: #202302;
+  --clr-secondary: #00100d;
+  --clr-accent: #ff7750;
+  --foreground: var(--clr-light);
+  --background: var(--clr-dark);
+}
+
+

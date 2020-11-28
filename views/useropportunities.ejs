@@ -1,0 +1,141 @@
+<%- include('./layout/header') %>
+<%-include('./layout/usernavbar')%>
+<br><br>
+
+
+<div class="input-group my-width mr-5">
+  <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+  <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
+  
+</div>
+<br> <br> 
+<div class="table-responsive mt-3 " id="whiteindark"  >
+  
+<table class="table table-list-search table-borderless text-center table-hover " id="my-table" id="whiteindark">
+  
+    <thead>
+      <tr>
+        <th scope="col" id="whiteindark">#</th>
+        <th scope="col" id="whiteindark">Company</th>
+        <th scope="col" id="whiteindark">Job Position</th>
+        <th scope="col" id="whiteindark">Salary</th>
+        <th scope="col" id="whiteindark">Type</th>
+        <th scope="col" id="whiteindark">Branches</th>
+        <th scope="col" id="whiteindark">Apply</th>
+        <th scope="col" id="whiteindark">View</th>
+
+        
+        
+
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <% var i=0 %>
+      <% companies.forEach(company=>{ i+=1%>
+        <tr>
+          <th scope="row" id="whiteindark"><%=i%>  </th>
+          <td id="whiteindark"><%=company.name%></td>
+          <td id="whiteindark"><%=company.position%></td>
+          <td id="whiteindark"><%=company.package%></td>
+          <td id="whiteindark"><%=company.type%></td>
+          <td id="whiteindark"><%=company.branches%></td>
+          <td id="whiteindark"><a href="<%=company.link%>" target="blank">
+            <%if(company.link){ %>
+            LINK
+            <%}%>
+          </a></td>
+          <td><a href="/user/opportunities/<%=company._id%>">View</a></td>
+          <% if(session.level=='admin'){%>
+
+          
+          <td id="whiteindark">
+            <a href="/admin/editplacement/<%=company._id%>">
+              <i class="fa fa-edit hvr-bounce-in">
+              </i>
+            </a>
+          
+            </td>
+          
+          <td id="whiteindark">
+            <form action="/admin/companydelete" method="POST"> 
+              <input type="hidden" value="<%=csrfToken%>" name="_csrf">
+
+
+              <input type="hidden" name="tid" value="<%=company._id%>">
+              <button id="whiteindark" class=" " style="background-color: transparent; border: none;"><i class="fa fa-trash-o hvr-bounce-in ">
+              </i></button>
+          </td>
+          <%}%>
+        </tr>
+       
+
+
+
+      <%})%>
+      
+      
+    </tbody>
+  </table>
+</div>
+<script>
+ $(document).ready(function() {
+    var activeSystemClass = $('.list-group-item.active');
+
+    //something is entered in search form
+    $('#system-search').keyup( function() {
+       var that = this;
+        // affect all table rows on in systems table
+        var tableBody = $('.table-list-search tbody');
+        var tableRowsClass = $('.table-list-search tbody tr');
+        $('.search-sf').remove();
+        tableRowsClass.each( function(i, val) {
+        
+            //Lower text for case insensitive
+            var rowText = $(val).text().toLowerCase();
+            var inputText = $(that).val().toLowerCase();
+            if(inputText != '')
+            {
+                $('.search-query-sf').remove();
+                tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
+                    + $(that).val()
+                    + '"</strong></td></tr>');
+            }
+            else
+            {
+                $('.search-query-sf').remove();
+            }
+
+            if( rowText.indexOf( inputText ) == -1 )
+            {
+                //hide rows
+                tableRowsClass.eq(i).hide();
+                
+            }
+            else
+            {
+                $('.search-sf').remove();
+                tableRowsClass.eq(i).show();
+            }
+        });
+        //all tr elements are hidden
+        if(tableRowsClass.children(':visible').length == 0)
+        {
+            tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
+        }
+    });
+});
+</script>
+<%- include('./layout/footer') %>
+
+<style>
+  i{
+    cursor: pointer;
+  }
+  .my-width{
+  width: 200px;
+  float: right;
+
+}
+</style>
