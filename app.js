@@ -27,7 +27,7 @@ app.use(cors());
 
 app.set('view engine','ejs');
 
-mongoose.connect('mongodb://localhost:27017/MAJORPROJECT', {useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://karan:Karan@123@opportunitygeeks.suvwz.mongodb.net/MAJORPROJECT', {useNewUrlParser: true,useUnifiedTopology: true});
 
 const store=new MongoDBStore({
   uri:"mongodb://localhost:27017/MAJORPROJECT",
@@ -185,7 +185,7 @@ app.use((req,res)=>{
   res.render('404',{pagetitle:'NotFound'});
 })
 
-app.listen(4000,()=>console.log("SERVER ............."));
+app.listen(process.env.PORT||4000,()=>console.log("SERVER ............."));
 
 
 
