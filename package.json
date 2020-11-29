@@ -1,6 +1,6 @@
 {
   "name": "MAJOR",
-  "version": "1.0.0", 
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,6 @@
   "engines": {
     "node": "13.11.0"
   },
-
   "dependencies": {
     "animate.css": "^4.1.1",
     "bcryptjs": "^2.4.3",
@@ -30,6 +29,7 @@
     "mongoose": "^5.10.13",
     "multer": "^1.4.2",
     "nodemailer": "^6.4.16",
-    "nodemailer-sendgrid-transport": "^0.2.0"
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "serve": "^11.3.2"
   }
 }

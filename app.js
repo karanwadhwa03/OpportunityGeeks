@@ -30,7 +30,7 @@ app.set('view engine','ejs');
 mongoose.connect('mongodb+srv://karan:Karan@123@opportunitygeeks.suvwz.mongodb.net/MAJORPROJECT', {useNewUrlParser: true,useUnifiedTopology: true});
 
 const store=new MongoDBStore({
-  uri:"mongodb://localhost:27017/MAJORPROJECT",
+  uri:"mongodb+srv://karan:Karan@123@opportunitygeeks.suvwz.mongodb.net/MAJORPROJECT",
   collection:'sessions'
 })
 app.use(session({
